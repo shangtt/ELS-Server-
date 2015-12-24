@@ -5,7 +5,8 @@ import java.rmi.server.UnicastRemoteObject;
 //远程端口的实现
 
 public class MessageImpl extends UnicastRemoteObject implements IMessage{
-	
+
+	private static final long serialVersionUID = 1L;
 
 	protected MessageImpl() throws RemoteException{
 		super();

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import po.accountPO.AccountPO;
 
+import rmi.MessageImpl;
+
 public interface AccountDataService {
 	public AccountPO find(String name);
 
@@ -15,4 +17,5 @@ public interface AccountDataService {
 
 	public ArrayList<AccountPO> getAccountList();
 
+//	public IMessage 
 }
