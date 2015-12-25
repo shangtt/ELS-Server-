@@ -95,10 +95,10 @@ public class AgencyList implements Serializable {
 
 	}
 
-	public void changeAgency(AgencyPO ap) {
+	public void changeAgency(AgencyPO ap1, AgencyPO ap2) {
 
-		removeAgency(ap);
-		addAgency(ap);
+		removeAgency(ap1);
+		addAgency(ap2);
 	}
 
 	public ArrayList<AgencyPO> getAgencyList() {

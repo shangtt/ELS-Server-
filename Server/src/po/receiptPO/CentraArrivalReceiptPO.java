@@ -13,7 +13,7 @@ public class CentraArrivalReceiptPO extends ReceiptPO{
 		this.Departure = D;
 		this.TranState = T;
 	}
-	public String getCentreCode(){
+	public String getCentraCode(){
 		return centraCode;
 	}
 	public String getDeparture(){

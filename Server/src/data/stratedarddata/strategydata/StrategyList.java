@@ -97,10 +97,10 @@ public class StrategyList implements Serializable {
 
 	}
 
-	public void changeStrategy(StrategyPO sp) {
+	public void changeStrategy(StrategyPO sp1, StrategyPO sp2) {
 
-		removeStrategy(sp);
-		addStrategy(sp);
+		removeStrategy(sp1);
+		addStrategy(sp2);
 	}
 
 	public ArrayList<StrategyPO> getStrategyList() {

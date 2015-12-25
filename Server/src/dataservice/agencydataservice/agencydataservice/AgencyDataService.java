@@ -9,7 +9,7 @@ public interface AgencyDataService {
 
 	public void add(AgencyPO ap);
 
-	public void change(AgencyPO ap);
+	public void change(AgencyPO ap1, AgencyPO ap2);
 
 	public void remove(AgencyPO ap);
 

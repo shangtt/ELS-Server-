@@ -16,9 +16,9 @@ public class StrategyData implements StrategyDataService {
 	}
 
 	@Override
-	public void change(StrategyPO sp) {
+	public void change(StrategyPO sp1, StrategyPO sp2) {
 		// TODO Auto-generated method stub
-		sl.changeStrategy(sp);
+		sl.changeStrategy(sp1, sp2);
 
 	}
 

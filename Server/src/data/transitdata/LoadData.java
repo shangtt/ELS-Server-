@@ -6,12 +6,13 @@ import po.transitPO.LoadPO;
 import dataservice.transitdataservice.LoadDataService;
 
 public class LoadData implements LoadDataService {
-	
-	private static LoadList ll=new LoadList();
+
+	private static LoadList ll = new LoadList();
+
 	@Override
 	public void addLoad(LoadPO po) {
 		ll.addLoad(po);
-		
+
 	}
 
 	@Override
@@ -25,8 +26,8 @@ public class LoadData implements LoadDataService {
 	}
 
 	@Override
-	public void changeLoad(LoadPO po) {
-		ll.changeLoad(po);
+	public void changeLoad(LoadPO po1, LoadPO po2) {
+		ll.changeLoad(po1, po2);
 	}
 
 	@Override

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import po.expressPO.arrivalPO.ArrivalPO;
 import dataservice.expressdataservice.arrivaldataservice.ArrivalDataService;
 
-public class ArrivalData  implements ArrivalDataService{
-	public static ArrivalList al=new ArrivalList();
+public class ArrivalData implements ArrivalDataService {
+	public static ArrivalList al = new ArrivalList();
 
 	@Override
 	public void addArrival(ArrivalPO po) {
@@ -19,8 +19,8 @@ public class ArrivalData  implements ArrivalDataService{
 	}
 
 	@Override
-	public void changeArrival(ArrivalPO po) {
-		al.addArrival(po);
+	public void changeArrival(ArrivalPO po1, ArrivalPO po2) {
+		al.changeArrival(po1, po2);
 	}
 
 	@Override

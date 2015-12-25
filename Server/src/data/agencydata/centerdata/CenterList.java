@@ -95,10 +95,10 @@ public class CenterList implements Serializable {
 
 	}
 
-	public void changeCenter(CenterPO cp) {
+	public void changeCenter(CenterPO cp1, CenterPO cp2) {
 
-		removeCenter(cp);
-		addCenter(cp);
+		removeCenter(cp1);
+		addCenter(cp2);
 	}
 
 	public ArrayList<CenterPO> getCenterList() {

@@ -23,9 +23,9 @@ public class BillData implements BillDataService {
 	}
 
 	@Override
-	public void change(BillPO bp) {
+	public void change(BillPO bp1, BillPO bp2) {
 		// TODO Auto-generated method stub
-		bl.changeBill(bp);
+		bl.changeBill(bp1, bp2);
 
 	}
 

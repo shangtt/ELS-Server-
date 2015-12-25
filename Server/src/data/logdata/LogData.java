@@ -16,9 +16,9 @@ public class LogData implements LogDataService {
 	}
 
 	@Override
-	public void change(LogPO lp) {
+	public void change(LogPO lp1, LogPO lp2) {
 		// TODO Auto-generated method stub
-		ll.changeLog(lp);
+		ll.changeLog(lp1, lp2);
 
 	}
 

@@ -14,7 +14,6 @@ public class AccountPO implements Serializable{
 	/**
 	 * 
 	 */
-	//private String id;		//19 bits at most
 	private String name;	//Account Title
 	private double balance;	//Account Balance
 	
@@ -23,11 +22,10 @@ public class AccountPO implements Serializable{
 		this.name = n;
 		this.balance = b;
 	}
-	
-	
-//	public String getID(){
-//		return id;
-//	}
+	public AccountPO(){
+		super();
+	}
+
 	
 	public void setName(String n){
 		this.name = n;
@@ -35,7 +33,10 @@ public class AccountPO implements Serializable{
 	public String getName(){
 		return name;
 	}
-	
+	public void setBalance(double q){
+		this.balance=q;
+		
+	}
 	public double getBalance(){
 		return balance;
 	}

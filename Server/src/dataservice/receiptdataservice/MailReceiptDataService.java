@@ -9,7 +9,7 @@ public interface MailReceiptDataService {
 
 	public void add(MailReceiptPO mp);
 
-	public void change(MailReceiptPO mp);
+	public void change(MailReceiptPO mp1, MailReceiptPO mp2);
 
 	public void remove(MailReceiptPO mp);
 

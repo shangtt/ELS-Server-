@@ -6,7 +6,7 @@ import po.expressPO.deliveryPO.DeliveryPO;
 import dataservice.expressdataservice.deliverydataservice.DeliveryDataService;
 
 public class DeliveryData implements DeliveryDataService {
-	public static DeliveryList dl=new DeliveryList();
+	public static DeliveryList dl = new DeliveryList();
 
 	@Override
 	public void addDeliveryl(DeliveryPO po) {
@@ -16,13 +16,13 @@ public class DeliveryData implements DeliveryDataService {
 	@Override
 	public void removeDelivery(DeliveryPO po) {
 		dl.removeDelivery(po);
-		
+
 	}
 
 	@Override
-	public void changeDelivery(DeliveryPO po) {
-		dl.changeDriver(po);
-		
+	public void changeDelivery(DeliveryPO po1, DeliveryPO po2) {
+		dl.changeDriver(po1, po2);
+
 	}
 
 	@Override

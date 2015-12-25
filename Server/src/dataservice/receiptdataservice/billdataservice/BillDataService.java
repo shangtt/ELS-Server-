@@ -9,7 +9,7 @@ public interface BillDataService {
 
 	public void add(BillPO bp);
 
-	public void change(BillPO bp);
+	public void change(BillPO bp1, BillPO bp2);
 
 	public void remove(BillPO bp);
 

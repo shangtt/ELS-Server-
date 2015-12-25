@@ -9,7 +9,7 @@ public interface CentraArrivalReceiptDataService {
 
 	public void add(CentraArrivalReceiptPO cp);
 
-	public void change(CentraArrivalReceiptPO cp);
+	public void change(CentraArrivalReceiptPO cp1, CentraArrivalReceiptPO cp2);
 
 	public void remove(CentraArrivalReceiptPO cp);
 

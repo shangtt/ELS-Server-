@@ -13,16 +13,16 @@ import po.transitPO.LoadPO;
 
 @SuppressWarnings("serial")
 public class LoadList implements Serializable {
-	public void addLoad(LoadPO po){
+	public void addLoad(LoadPO po) {
 		try {
-			FileInputStream fis=new FileInputStream("Load.file");
+			FileInputStream fis = new FileInputStream("Load.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<LoadPO> lpl=(ArrayList<LoadPO>) ois.readObject();
+			ArrayList<LoadPO> lpl = (ArrayList<LoadPO>) ois.readObject();
 			lpl.add(po);
-			FileOutputStream fs=new FileOutputStream("Load.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("Load.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(lpl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -32,23 +32,24 @@ public class LoadList implements Serializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	public void removeLoad(LoadPO po){
+
+	public void removeLoad(LoadPO po) {
 		try {
-			FileInputStream fis=new FileInputStream("Load.file");
+			FileInputStream fis = new FileInputStream("Load.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<LoadPO> lpl=(ArrayList<LoadPO>) ois.readObject();
-			LoadPO a=new LoadPO();
-			for(LoadPO dp:lpl){
-				if(dp.getID().equals(po.getID()))
-						a=dp;
+			ArrayList<LoadPO> lpl = (ArrayList<LoadPO>) ois.readObject();
+			LoadPO a = new LoadPO();
+			for (LoadPO dp : lpl) {
+				if (dp.getID().equals(po.getID()))
+					a = dp;
 			}
 			lpl.remove(a);
-			FileOutputStream fs=new FileOutputStream("Load.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("Load.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(lpl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -59,20 +60,22 @@ public class LoadList implements Serializable {
 			e.printStackTrace();
 		}
 	}
-	public void changeLoad(LoadPO po){
-		removeLoad(po);
-		addLoad(po);
+
+	public void changeLoad(LoadPO po1, LoadPO po2) {
+		removeLoad(po1);
+		addLoad(po2);
 	}
-	public LoadPO getLoad(LoadPO po){
+
+	public LoadPO getLoad(LoadPO po) {
 		try {
-			FileInputStream fis=new FileInputStream("Load.file");
+			FileInputStream fis = new FileInputStream("Load.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<LoadPO> lpl=(ArrayList<LoadPO>) ois.readObject();
-			for(LoadPO lp:lpl){
-				if(lp.getID().equals(po.getID()))
-						return lp;
+			ArrayList<LoadPO> lpl = (ArrayList<LoadPO>) ois.readObject();
+			for (LoadPO lp : lpl) {
+				if (lp.getID().equals(po.getID()))
+					return lp;
 			}
 			return null;
 		} catch (FileNotFoundException e) {
@@ -84,13 +87,14 @@ public class LoadList implements Serializable {
 		}
 		return null;
 	}
-	public ArrayList<LoadPO> getLoadList(){
+
+	public ArrayList<LoadPO> getLoadList() {
 		try {
-			FileInputStream fis=new FileInputStream("Load.file");
+			FileInputStream fis = new FileInputStream("Load.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<LoadPO> lpl=(ArrayList<LoadPO>) ois.readObject();
+			ArrayList<LoadPO> lpl = (ArrayList<LoadPO>) ois.readObject();
 			return lpl;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -101,15 +105,16 @@ public class LoadList implements Serializable {
 		}
 		return null;
 	}
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		try {
-			FileInputStream fis =new FileInputStream("Load.file");
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			FileInputStream fis = new FileInputStream("Load.file");
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<LoadPO> upl =(ArrayList<LoadPO>) ois.readObject();
-			for(LoadPO po:upl){
+			ArrayList<LoadPO> upl = (ArrayList<LoadPO>) ois.readObject();
+			for (LoadPO po : upl) {
 				System.out.println(po.getID());
-				}
+			}
 			ois.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -121,6 +126,6 @@ public class LoadList implements Serializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 }

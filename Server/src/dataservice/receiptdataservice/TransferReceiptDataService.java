@@ -7,11 +7,11 @@ import po.receiptPO.TransferReceiptPO;
 public interface TransferReceiptDataService {
 	public TransferReceiptPO find(String OrderID);
 
-	public void add(TransferReceiptPO cp);
+	public void add(TransferReceiptPO tp);
 
-	public void change(TransferReceiptPO cp);
+	public void change(TransferReceiptPO tp1, TransferReceiptPO tp2);
 
-	public void remove(TransferReceiptPO cp);
+	public void remove(TransferReceiptPO tp);
 
 	public ArrayList<TransferReceiptPO> getTransferReceiptList();
 

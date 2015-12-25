@@ -95,10 +95,10 @@ public class BillList implements Serializable {
 
 	}
 
-	public void changeBill(BillPO bp) {
+	public void changeBill(BillPO bp1, BillPO bp2) {
 
-		removeBill(bp);
-		addBill(bp);
+		removeBill(bp1);
+		addBill(bp2);
 	}
 
 	public ArrayList<BillPO> getBillList() {

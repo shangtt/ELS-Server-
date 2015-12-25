@@ -20,7 +20,8 @@ public class StandardList implements Serializable {
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
 			ArrayList<StandardPO> upl = (ArrayList<StandardPO>) ois.readObject();
-			for (@SuppressWarnings("unused") StandardPO po : upl) {
+			for (@SuppressWarnings("unused")
+			StandardPO po : upl) {
 				// if (po.getName().equals(name)) {
 				// return po;
 				// }
@@ -72,7 +73,8 @@ public class StandardList implements Serializable {
 			@SuppressWarnings("unchecked")
 			ArrayList<StandardPO> upl = (ArrayList<StandardPO>) ois.readObject();
 			StandardPO a = null;
-			for (@SuppressWarnings("unused") StandardPO po : upl) {
+			for (@SuppressWarnings("unused")
+			StandardPO po : upl) {
 				// if (po.getName().equals(sp.getName())) {
 				// a = sp;
 				// }
@@ -95,10 +97,10 @@ public class StandardList implements Serializable {
 
 	}
 
-	public void changeAccount(StandardPO sp) {
+	public void changeAccount(StandardPO sp1, StandardPO sp2) {
 
-		removeStandard(sp);
-		addStandard(sp);
+		removeStandard(sp1);
+		addStandard(sp2);
 	}
 
 	public ArrayList<StandardPO> getStandardList() {

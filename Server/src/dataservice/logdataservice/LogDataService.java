@@ -9,7 +9,7 @@ public interface LogDataService {
 
 	public void add(LogPO lp);
 
-	public void change(LogPO lp);
+	public void change(LogPO lp1, LogPO lp2);
 
 	public void remove(LogPO lp);
 

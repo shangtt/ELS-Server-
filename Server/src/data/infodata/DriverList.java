@@ -12,17 +12,17 @@ import java.util.ArrayList;
 import po.infoPO.DriverPO;
 
 @SuppressWarnings("serial")
-public class DriverList implements Serializable{
-	public void addDriver(DriverPO po){
+public class DriverList implements Serializable {
+	public void addDriver(DriverPO po) {
 		try {
-			FileInputStream fis=new FileInputStream("Driver.file");
+			FileInputStream fis = new FileInputStream("Driver.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<DriverPO> dpl=(ArrayList<DriverPO>) ois.readObject();
+			ArrayList<DriverPO> dpl = (ArrayList<DriverPO>) ois.readObject();
 			dpl.add(po);
-			FileOutputStream fs=new FileOutputStream("Driver.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("Driver.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(dpl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -36,21 +36,22 @@ public class DriverList implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	public void removeDriver(DriverPO po){
+
+	public void removeDriver(DriverPO po) {
 		try {
-			FileInputStream fis=new FileInputStream("Driver.file");
+			FileInputStream fis = new FileInputStream("Driver.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<DriverPO> dpl=(ArrayList<DriverPO>) ois.readObject();
-			DriverPO a=new DriverPO();
-			for(DriverPO dp:dpl){
-				if(dp.getIDCode().equals(po.getIDCode()))
-						a=dp;
+			ArrayList<DriverPO> dpl = (ArrayList<DriverPO>) ois.readObject();
+			DriverPO a = new DriverPO();
+			for (DriverPO dp : dpl) {
+				if (dp.getIDCode().equals(po.getIDCode()))
+					a = dp;
 			}
 			dpl.remove(a);
-			FileOutputStream fs=new FileOutputStream("Driver.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("Driver.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(dpl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -64,20 +65,22 @@ public class DriverList implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	public void changeDriver(DriverPO po){
-		removeDriver(po);
-		addDriver(po);
+
+	public void changeDriver(DriverPO po1, DriverPO po2) {
+		removeDriver(po1);
+		addDriver(po2);
 	}
-	public DriverPO getDriver(DriverPO po){
+
+	public DriverPO getDriver(DriverPO po) {
 		try {
-			FileInputStream fis=new FileInputStream("Driver.file");
+			FileInputStream fis = new FileInputStream("Driver.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<DriverPO> dpl=(ArrayList<DriverPO>) ois.readObject();
-			for(DriverPO dp:dpl){
-				if(dp.getIDCode().equals(po.getIDCode()))
-						return dp;
+			ArrayList<DriverPO> dpl = (ArrayList<DriverPO>) ois.readObject();
+			for (DriverPO dp : dpl) {
+				if (dp.getIDCode().equals(po.getIDCode()))
+					return dp;
 			}
 			return null;
 		} catch (FileNotFoundException e) {
@@ -92,13 +95,14 @@ public class DriverList implements Serializable{
 		}
 		return null;
 	}
-	public ArrayList<DriverPO> getDriverList(){
+
+	public ArrayList<DriverPO> getDriverList() {
 		try {
-			FileInputStream fis=new FileInputStream("Driver.file");
+			FileInputStream fis = new FileInputStream("Driver.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<DriverPO> dpl=(ArrayList<DriverPO>) ois.readObject();
+			ArrayList<DriverPO> dpl = (ArrayList<DriverPO>) ois.readObject();
 			return dpl;
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -112,13 +116,14 @@ public class DriverList implements Serializable{
 		}
 		return null;
 	}
-	public static void main(String[] args){
-		DriverList dl=new DriverList();
-//		DriverPO po=new DriverPO();
-//		po.setIDCode("999");
-//		dl.removeDriver(po);
-		ArrayList<DriverPO>a=dl.getDriverList();
-		for(int i=0;i<a.size();i++){
+
+	public static void main(String[] args) {
+		DriverList dl = new DriverList();
+		// DriverPO po=new DriverPO();
+		// po.setIDCode("999");
+		// dl.removeDriver(po);
+		ArrayList<DriverPO> a = dl.getDriverList();
+		for (int i = 0; i < a.size(); i++) {
 			System.out.println(a.get(i).getIDCode());
 		}
 	}

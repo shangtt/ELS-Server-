@@ -9,7 +9,7 @@ public interface OfficeArrivalReceiptDataService {
 
 	public void add(OfficeArrivalReceiptPO op);
 
-	public void change(OfficeArrivalReceiptPO op);
+	public void change(OfficeArrivalReceiptPO op1, OfficeArrivalReceiptPO op2);
 
 	public void remove(OfficeArrivalReceiptPO op);
 

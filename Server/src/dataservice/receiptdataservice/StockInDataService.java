@@ -9,7 +9,7 @@ public interface StockInDataService {
 
 	public void add(StockInPO sp);
 
-	public void change(StockInPO sp);
+	public void change(StockInPO sp1, StockInPO sp2);
 
 	public void remove(StockInPO sp);
 

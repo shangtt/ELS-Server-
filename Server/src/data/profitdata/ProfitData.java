@@ -16,9 +16,9 @@ public class ProfitData implements ProfitDataService {
 	}
 
 	@Override
-	public void change(ProfitPO pp) {
+	public void change(ProfitPO pp1, ProfitPO pp2) {
 		// TODO Auto-generated method stub
-		pl.changeAccount(pp);
+		pl.changeAccount(pp1, pp2);
 
 	}
 

@@ -16,9 +16,9 @@ public class StandardData implements StandardDataService {
 	}
 
 	@Override
-	public void change(StandardPO sp) {
+	public void change(StandardPO sp1, StandardPO sp2) {
 		// TODO Auto-generated method stub
-		sl.changeAccount(sp);
+		sl.changeAccount(sp1, sp2);
 
 	}
 

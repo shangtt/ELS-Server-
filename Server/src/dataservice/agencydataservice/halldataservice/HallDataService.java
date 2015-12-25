@@ -9,7 +9,7 @@ public interface HallDataService {
 
 	public void add(HallPO hp);
 
-	public void change(HallPO hp);
+	public void change(HallPO hp1, HallPO hp2);
 
 	public void remove(HallPO hp);
 

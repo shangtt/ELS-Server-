@@ -97,10 +97,10 @@ public class LogList implements Serializable {
 
 	}
 
-	public void changeLog(LogPO lp) {
+	public void changeLog(LogPO lp1, LogPO lp2) {
 
-		removeLog(lp);
-		addLog(lp);
+		removeLog(lp1);
+		addLog(lp2);
 	}
 
 	public ArrayList<LogPO> getLogList() {

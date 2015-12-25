@@ -9,7 +9,7 @@ public interface ReceiptDataService {
 
 	public void add(ReceiptPO rp);
 
-	public void change(ReceiptPO rp);
+	public void change(ReceiptPO rp1, ReceiptPO rp2);
 
 	public void remove(ReceiptPO rp);
 

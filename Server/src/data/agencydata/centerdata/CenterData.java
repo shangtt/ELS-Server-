@@ -23,9 +23,9 @@ public class CenterData implements CenterDataService {
 	}
 
 	@Override
-	public void change(CenterPO cp) {
+	public void change(CenterPO cp1, CenterPO cp2) {
 		// TODO Auto-generated method stub
-		cl.changeCenter(cp);
+		cl.changeCenter(cp1, cp2);
 
 	}
 

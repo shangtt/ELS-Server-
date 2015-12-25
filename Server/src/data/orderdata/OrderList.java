@@ -11,19 +11,18 @@ import java.util.ArrayList;
 
 import po.orderPO.OrderPO;
 
-
 @SuppressWarnings("serial")
-public class OrderList implements  Serializable{
+public class OrderList implements Serializable {
 
 	@SuppressWarnings("resource")
-	public OrderPO getOrderPO(OrderPO op){
+	public OrderPO getOrderPO(OrderPO op) {
 		try {
-			FileInputStream fis =new FileInputStream("Order.file");
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			FileInputStream fis = new FileInputStream("Order.file");
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<OrderPO> opl =(ArrayList<OrderPO>) ois.readObject();
-			for(OrderPO po:opl){
-				if(po.getID().equals(op.getID())){
+			ArrayList<OrderPO> opl = (ArrayList<OrderPO>) ois.readObject();
+			for (OrderPO po : opl) {
+				if (po.getID().equals(op.getID())) {
 					return po;
 				}
 			}
@@ -40,16 +39,17 @@ public class OrderList implements  Serializable{
 		}
 		return null;
 	}
-	public  void addOrder(OrderPO op){
+
+	public void addOrder(OrderPO op) {
 		try {
-			FileInputStream fis =new FileInputStream("Order.file");
+			FileInputStream fis = new FileInputStream("Order.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<OrderPO> upl=(ArrayList<OrderPO>) ois.readObject();
+			ArrayList<OrderPO> upl = (ArrayList<OrderPO>) ois.readObject();
 			upl.add(op);
-			FileOutputStream fs=new FileOutputStream("Order.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("Order.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -63,22 +63,23 @@ public class OrderList implements  Serializable{
 			e.printStackTrace();
 		}
 	}
-	public  void removeOrder(OrderPO op){
+
+	public void removeOrder(OrderPO op) {
 		try {
-			FileInputStream fis =new FileInputStream("Order.file");
+			FileInputStream fis = new FileInputStream("Order.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<OrderPO> opl =(ArrayList<OrderPO>) ois.readObject();
+			ArrayList<OrderPO> opl = (ArrayList<OrderPO>) ois.readObject();
 			OrderPO a = null;
-			for(OrderPO po:opl){
-				if(po.getID()==po.getID()){
-					a=po;
+			for (OrderPO po : opl) {
+				if (po.getID() == po.getID()) {
+					a = po;
 				}
 			}
 			opl.remove(a);
-			FileOutputStream fs=new FileOutputStream("order.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("order.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(opl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -91,20 +92,22 @@ public class OrderList implements  Serializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	public  void changeOrder(OrderPO op){
-		
-		removeOrder(op);
-		addOrder(op);
+
+	public void changeOrder(OrderPO op1, OrderPO op2) {
+
+		removeOrder(op1);
+		addOrder(op2);
 	}
-	public ArrayList<OrderPO> getOrderList(){
+
+	public ArrayList<OrderPO> getOrderList() {
 		try {
-			FileInputStream fis =new FileInputStream("Order.file");
+			FileInputStream fis = new FileInputStream("Order.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<OrderPO> opl =(ArrayList<OrderPO>) ois.readObject();
+			ArrayList<OrderPO> opl = (ArrayList<OrderPO>) ois.readObject();
 			return opl;
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -118,16 +121,18 @@ public class OrderList implements  Serializable{
 		}
 		return null;
 	}
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 
 		try {
-			FileInputStream fis =new FileInputStream("Order.file");
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			FileInputStream fis = new FileInputStream("Order.file");
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<OrderPO> upl =(ArrayList<OrderPO>) ois.readObject();
-			for(OrderPO po:upl){
-				System.out.println(po.getSize()+" "+po.getWeight()+po.getTypeOfExpress()+po.getTypeOfPack()+po.getStateOfExpress()+po.getID());
-				}
+			ArrayList<OrderPO> upl = (ArrayList<OrderPO>) ois.readObject();
+			for (OrderPO po : upl) {
+				System.out.println(po.getSize() + " " + po.getWeight() + po.getTypeOfExpress() + po.getTypeOfPack()
+						+ po.getStateOfExpress() + po.getID());
+			}
 			ois.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -139,8 +144,7 @@ public class OrderList implements  Serializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
 
 }

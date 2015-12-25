@@ -9,7 +9,7 @@ public interface LoadReceiptDataService {
 
 	public void add(LoadReceiptPO lp);
 
-	public void change(LoadReceiptPO lp);
+	public void change(LoadReceiptPO lp1, LoadReceiptPO lp2);
 
 	public void remove(LoadReceiptPO lp);
 

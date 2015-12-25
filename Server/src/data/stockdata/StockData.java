@@ -2,40 +2,44 @@ package data.stockdata;
 
 import java.util.ArrayList;
 
-import po.stockPO.StockPO;
 import dataservice.stockdataservice.StockDataService;
+import po.stockPO.StockPO;
 
 public class StockData implements StockDataService {
+	public static StockList sl = new StockList();
 
 	@Override
-	public void add(StockPO po) {
+	public void add(StockPO sp) {
 		// TODO Auto-generated method stub
-		
+		sl.addStock(sp);
+
 	}
 
 	@Override
-	public void remove(StockPO po) {
+	public void remove(StockPO sp) {
 		// TODO Auto-generated method stub
-		
+		sl.removeStock(sp);
+
 	}
 
 	@Override
-	public StockPO find(StockPO po) {
+	public StockPO find(String orderID) {
 		// TODO Auto-generated method stub
-		return null;
+		StockPO sp = sl.getStockPO(orderID);
+		return sp;
+	}
+
+	@Override
+	public void chang(StockPO sp1, StockPO sp2) {
+		// TODO Auto-generated method stub
+		sl.changeStock(sp1, sp2);
 	}
 
 	@Override
 	public ArrayList<StockPO> stockList() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<StockPO> a = sl.getStockist();
+		return a;
 	}
-
-	@Override
-	public StockPO chang(StockPO po) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 }

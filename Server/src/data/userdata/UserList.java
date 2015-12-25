@@ -10,23 +10,23 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import po.userPO.UserPO;
-//import po.userPO.UserRole;
+import po.userPO.UserRole;
 
 @SuppressWarnings("serial")
-public class UserList implements Serializable{
-	
-//	public static ArrayList<UserPO> upl;
-	
-	public UserPO getUserPO(String id){
+public class UserList implements Serializable {
+
+	// public static ArrayList<UserPO> upl;
+
+	public UserPO getUserPO(String id) {
 		try {
-			FileInputStream fis =new FileInputStream("User.file");
+			FileInputStream fis = new FileInputStream("User.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<UserPO> upl =(ArrayList<UserPO>) ois.readObject();
-			for(UserPO po:upl){
-//				System.out.println(po.getID()+"  "+id);
-				if(po.getID().equals(id)){
+			ArrayList<UserPO> upl = (ArrayList<UserPO>) ois.readObject();
+			for (UserPO po : upl) {
+				// System.out.println(po.getID()+" "+id);
+				if (po.getID().equals(id)) {
 					return po;
 				}
 			}
@@ -43,19 +43,20 @@ public class UserList implements Serializable{
 		}
 		return null;
 	}
+
 	@SuppressWarnings("unchecked")
-	public void addUser(UserPO up){
+	public void addUser(UserPO up) {
 		try {
-			FileInputStream fis =new FileInputStream("User.file");
+			FileInputStream fis = new FileInputStream("User.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
-			ArrayList<UserPO> upl=(ArrayList<UserPO>) ois.readObject();
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			ArrayList<UserPO> upl = (ArrayList<UserPO>) ois.readObject();
 			upl.add(up);
-			FileOutputStream fs=new FileOutputStream("User.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("User.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(upl);
 			os.close();
-			
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,22 +68,23 @@ public class UserList implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	public  void removeUser(UserPO up){
+
+	public void removeUser(UserPO up) {
 		try {
-			FileInputStream fis =new FileInputStream("User.file");
+			FileInputStream fis = new FileInputStream("User.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<UserPO> upl =(ArrayList<UserPO>) ois.readObject();
+			ArrayList<UserPO> upl = (ArrayList<UserPO>) ois.readObject();
 			UserPO a = null;
-			for(UserPO po:upl){
-				if(po.getID().equals(up.getID())){
-					a=po;
+			for (UserPO po : upl) {
+				if (po.getID().equals(up.getID())) {
+					a = po;
 				}
 			}
 			upl.remove(a);
-			FileOutputStream fs=new FileOutputStream("User.file");
-			ObjectOutputStream os=new ObjectOutputStream(fs);
+			FileOutputStream fs = new FileOutputStream("User.file");
+			ObjectOutputStream os = new ObjectOutputStream(fs);
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
@@ -95,20 +97,22 @@ public class UserList implements Serializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	public  void changeUser(UserPO up){
-		
-		removeUser(up);
-		addUser(up);
+
+	public void changeUser(UserPO up1, UserPO up2) {
+
+		removeUser(up1);
+		addUser(up2);
 	}
-	public  ArrayList<UserPO> getUserList(){
+
+	public ArrayList<UserPO> getUserList() {
 		try {
-			FileInputStream fis =new FileInputStream("User.file");
+			FileInputStream fis = new FileInputStream("User.file");
 			@SuppressWarnings("resource")
-			ObjectInputStream ois=new ObjectInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
-			ArrayList<UserPO> upl =(ArrayList<UserPO>) ois.readObject();
+			ArrayList<UserPO> upl = (ArrayList<UserPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -122,36 +126,34 @@ public class UserList implements Serializable{
 		}
 		return null;
 	}
-	
-//	public static void main(String[] args){
-//		UserPO a=new UserPO("zzzx","zzzx",UserRole.中转中心业务员);
-//		UserList ul=new UserList();
-//		ul.addUser(a);
-////		ArrayList<UserPO> upl=getUserList();
-////		for(UserPO po:upl){
-////			System.out.println("1+"+po.getID()+po.getPassword()+po.getRole());
-////		}
-//		try {
-//			FileInputStream fis =new FileInputStream("User.file");
-//			@SuppressWarnings("resource")
-//			ObjectInputStream ois=new ObjectInputStream(fis);
-//			@SuppressWarnings("unchecked")
-//			ArrayList<UserPO> upl =(ArrayList<UserPO>) ois.readObject();
-//			for(UserPO po:upl){
-//				System.out.println(po.getID()+po.getPassword()+po.getRole());
-//				}
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
 
-	
+	public static void main(String[] args) {
+		UserPO a = new UserPO("zzzx", "zzzx", UserRole.中转中心业务员);
+		UserList ul = new UserList();
+		ul.addUser(a);
+		// ArrayList<UserPO> upl=getUserList();
+		// for(UserPO po:upl){
+		// System.out.println("1+"+po.getID()+po.getPassword()+po.getRole());
+		// }
+		try {
+			FileInputStream fis = new FileInputStream("User.file");
+			@SuppressWarnings("resource")
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			@SuppressWarnings("unchecked")
+			ArrayList<UserPO> upl = (ArrayList<UserPO>) ois.readObject();
+			for (UserPO po : upl) {
+				System.out.println(po.getID() + po.getPassword() + po.getRole());
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }
-

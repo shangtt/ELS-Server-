@@ -95,10 +95,10 @@ public class HallList implements Serializable {
 
 	}
 
-	public void changeHall(HallPO hp) {
+	public void changeHall(HallPO hp1, HallPO hp2) {
 
-		removeHall(hp);
-		addHall(hp);
+		removeHall(hp1);
+		addHall(hp2);
 	}
 
 	public ArrayList<HallPO> getHallList() {

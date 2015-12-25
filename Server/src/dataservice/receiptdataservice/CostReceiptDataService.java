@@ -9,7 +9,7 @@ public interface CostReceiptDataService {
 
 	public void add(CostReceiptPO cp);
 
-	public void change(CostReceiptPO cp);
+	public void change(CostReceiptPO cp1, CostReceiptPO cp2);
 
 	public void remove(CostReceiptPO cp);
 

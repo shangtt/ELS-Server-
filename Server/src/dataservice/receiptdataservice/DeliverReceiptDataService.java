@@ -9,7 +9,7 @@ public interface DeliverReceiptDataService {
 
 	public void add(DeliverReceiptPO dp);
 
-	public void change(DeliverReceiptPO dp);
+	public void change(DeliverReceiptPO dp1, DeliverReceiptPO dp2);
 
 	public void remove(DeliverReceiptPO dp);
 

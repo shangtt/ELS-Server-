@@ -97,10 +97,10 @@ public class ProfitList implements Serializable {
 
 	}
 
-	public void changeAccount(ProfitPO pp) {
+	public void changeAccount(ProfitPO pp1, ProfitPO pp2) {
 
-		removeProfit(pp);
-		addProfit(pp);
+		removeProfit(pp1);
+		addProfit(pp2);
 	}
 
 	public ArrayList<ProfitPO> getProfitList() {

@@ -23,9 +23,9 @@ public class HallData implements HallDataService {
 	}
 
 	@Override
-	public void change(HallPO hp) {
+	public void change(HallPO hp1, HallPO hp2) {
 		// TODO Auto-generated method stub
-		hl.changeHall(hp);
+		hl.changeHall(hp1, hp2);
 
 	}
 

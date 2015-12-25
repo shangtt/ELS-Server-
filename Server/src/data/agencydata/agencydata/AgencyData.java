@@ -23,9 +23,9 @@ public class AgencyData implements AgencyDataService {
 	}
 
 	@Override
-	public void change(AgencyPO ap) {
+	public void change(AgencyPO ap1, AgencyPO ap2) {
 		// TODO Auto-generated method stub
-		al.changeAgency(ap);
+		al.changeAgency(ap1, ap2);
 
 	}
 

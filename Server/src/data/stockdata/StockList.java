@@ -95,10 +95,10 @@ public class StockList implements Serializable {
 
 	}
 
-	public void changeStock(StockPO sp) {
+	public void changeStock(StockPO sp1, StockPO sp2) {
 
-		removeStock(sp);
-		addStock(sp);
+		removeStock(sp1);
+		addStock(sp2);
 	}
 
 	public ArrayList<StockPO> getStockist() {

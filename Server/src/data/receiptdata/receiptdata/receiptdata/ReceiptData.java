@@ -23,9 +23,9 @@ public class ReceiptData implements ReceiptDataService {
 	}
 
 	@Override
-	public void change(ReceiptPO rp) {
+	public void change(ReceiptPO rp1, ReceiptPO rp2) {
 		// TODO Auto-generated method stub
-		rl.changeReceipt(rp);
+		rl.changeReceipt(rp1);
 
 	}
 

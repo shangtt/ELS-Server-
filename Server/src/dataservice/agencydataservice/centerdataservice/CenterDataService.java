@@ -9,7 +9,7 @@ public interface CenterDataService {
 
 	public void add(CenterPO cp);
 
-	public void change(CenterPO cp);
+	public void change(CenterPO cp1, CenterPO cp2);
 
 	public void remove(CenterPO cp);
 
